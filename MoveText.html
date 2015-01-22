@@ -1,0 +1,87 @@
+
+<html lang="en-US">
+<head>
+<title>JavaScript tutorial: moving text</title>
+
+<script language="JavaScript">
+
+Hmove=0; // Move horizontally
+Vmove=0; // Move vertically
+j=0; // Direction
+
+function moveAcross(obj)
+{    
+    obj.style.left=Hmove;
+    obj.style.top=Vmove;
+    j++;
+  if(j == 1)
+  {
+    //Move right
+      Hmove+=4; 
+      if(Hmove<210)
+      {
+          j--;
+          window.setTimeout("moveAcross("+obj.id+");", 0);
+        }
+        else
+          window.setTimeout("moveAcross("+obj.id+");", 0);
+    }
+  else if(j == 2)
+  {
+    //Move left down
+    Vmove+=4;
+    Hmove-=4; 
+      if(Hmove>0)
+      {
+      if(Vmove<250)
+      {
+        j--;
+            window.setTimeout("moveAcross("+obj.id+");", 0);
+          }
+      }
+      else
+          window.setTimeout("moveAcross("+obj.id+");", 0);
+  }
+  else if(j == 3)
+  {
+    //Move right
+      Hmove+=4;
+      if(Hmove<210)
+      {
+        j--;
+          window.setTimeout("moveAcross("+obj.id+");", 0);
+        }
+        else
+          window.setTimeout("moveAcross("+obj.id+");", 0);
+  }
+  else if(j == 4)
+  {
+    //move left up
+    Vmove-=4;
+      Hmove-=4; 
+      if(Hmove>0)
+      {
+        if(Vmove>0)
+        {
+          j--;
+            window.setTimeout("moveAcross("+obj.id+");", 0);
+          }
+        }
+        else
+        {
+          j=0;
+          window.setTimeout("moveAcross("+obj.id+");", 0);
+        }
+  }
+}
+</script>
+<body>
+
+<div style="position: absolute; left: 0;  top: 0;" id="SomeText">
+  <font color=#0000ff size=3>
+    Made with <a href="http://www.javascriptdeveloper.com/javascript-editor/">Antechinus JavaScript Editor</a>
+  </font>
+</div>
+<script language="JavaScript">moveAcross(SomeText);</script>
+</body>
+</html>

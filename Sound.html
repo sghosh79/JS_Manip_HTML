@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<title>Adding Sound to Your Pages</title>
+
+<script language="javascript" src="cpointlib.js"></script>
+
+<script>
+//Initialize two sound clips with 1 fallback file each:
+var mouseoversound=createsoundbite("whistle.ogg", "whistle.mp3");
+var clicksound=createsoundbite("click.ogg", "click.mp3");
+</script>
+</head>
+
+<body>
+<p align="left"><b>Hover</b> your mouse over any of the links below to hear a 
+sound effect:</p>
+
+<p align="left">
+<a href="http://www.c-point.com/" target="_blank" onmouseover="mouseoversound.playclip()">C Point</a></p>
+
+<p align="left">
+<a href="http://fameguitar.com/" target="_blank" onmouseover="mouseoversound.playclip()">FAME Guitar</a></p>
+
+<p align="left">
+<a href="http://javascriptdeveloper.com/" target="_blank" onmouseover="mouseoversound.playclip()">JavaScript Developer</a></p>
+
+<p align="left">
+<a href="http://giftedchildmagazine.com/" target="_blank" onmouseover="mouseoversound.playclip()">Gifted Child Magazine</a></p>
+
+<p align="left"><b>Click</b> on the following links to hear a sound effect:</p>
+<p align="left">
+<a href="#current" onclick="clicksound.playclip()">Link 1</a>
+<a href="#current" onclick="clicksound.playclip()">Link 2</a>
+<a href="#current" onclick="clicksound.playclip()">Link 3</a></p>
+</body>
+</html>

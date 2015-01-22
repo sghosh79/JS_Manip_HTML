@@ -1,0 +1,30 @@
+<html lang="en-US">
+<head>
+<title>Moving an Image</title>
+
+<script language="JavaScript">
+
+leftPos=-100;
+function moveObjRight(obj) 
+{    
+   	obj.style.left = leftPos;
+   	leftPos++;
+   	if(leftPos < 300)
+   	  	window.setTimeout("moveObjRight(" +obj.id+ ");", 0);
+}
+
+</script>
+
+</head>
+
+<body>
+
+<p><img id="saucer" style="z-index:0; position:absolute; top:50px; left:-100px" 
+	height="72" width="100" align="baseline" border="0" hspace="0" src="saucer.gif"></p>
+
+<script language="JavaScript">
+	moveObjRight(saucer);
+</script>
+
+</body>
+</html>

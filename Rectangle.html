@@ -1,0 +1,104 @@
+
+<html lang="en-US">
+<head>
+<title>JavaScript tutorial: looping animation</title>
+
+<script language="JavaScript">
+
+function sequencer(n)
+{			
+	switch(n)
+	{
+		case 0:
+			moveObjRight(JS1, 340, 100);
+			break;
+		case 1:	
+			moveObjDown(JS1, 340, 160);
+			break;
+		case 2:
+			moveObjLeft(JS1, 40, 160);
+			break;
+		case 3:
+			moveObjUp(JS1, 40, 100);
+		default:
+			break;
+	}
+}
+
+Hmove=-100;
+Vmove=100;
+
+function moveObjRight(obj, H, V) 
+{    
+   	obj.style.left=Hmove;
+   	obj.style.top=Vmove;
+   	Hmove+=4;
+   	if(Hmove<H)
+   	  	window.setTimeout("moveObjRight(" +obj.id+ "," +H+ "," +V+ ");", 0);
+   	if(Hmove==H)
+   	{
+		Hmove=340;
+		sequencer(1);
+   	}
+}
+
+function moveObjDown(obj, H, V) 
+{    
+   	obj.style.left=Hmove;
+	obj.style.top=Vmove;
+   	Vmove+=4;
+   	if(Vmove<V)
+      	window.setTimeout("moveObjDown("+obj.id+"," +H+ "," +V+ ");", 0);
+	if(Vmove == V)
+	{
+		Vmove=160;
+		sequencer(2);
+	}
+}
+
+function moveObjLeft(obj, H, V) 
+{    
+   	obj.style.left=Hmove;
+   	obj.style.top=Vmove;
+   	Hmove-=4;
+   	if(Hmove>H)
+      	window.setTimeout("moveObjLeft("+obj.id+", "+H+");", 0);
+	if(H == Hmove)
+	{
+		//alert(H +" "+ Hmove);
+		Hmove=40;
+		sequencer(3);
+	}
+}
+
+function moveObjUp(obj, H, V) 
+{    
+   	obj.style.left=Hmove;
+   	obj.style.top=Vmove;
+   	Vmove-=4;
+   	if(Vmove > V)
+      	window.setTimeout("moveObjUp("+obj.id+", "+H+ "," +V+ ");", 0);
+	if(Vmove == V)
+	{
+		Vmove=100;
+		Hmove=40;
+		sequencer(0);
+	}
+}
+
+</script>
+
+<body>
+
+<img id="JS1" style="left: 10px; position: absolute; top: 100px" height="32" 
+hspace="0" src="JS.gif" width="101" align="baseline" border="0">
+
+<div style="left: 140px; width: 200px; position: absolute; top: 130px; height: 68px">
+<font color="#0000ff" size="1">This script demonstrates how to move an image on a set path.</font>
+</div>
+
+<script language="JavaScript">
+	sequencer(0);
+</script>
+</body>
+</html>

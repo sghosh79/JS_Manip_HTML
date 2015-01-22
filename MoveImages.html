@@ -1,0 +1,60 @@
+
+<html lang="en-US">
+<head>
+<title>JavaScript tutorial: animation sequencing</title>
+
+<script language="JavaScript">
+
+function sequencer(n)
+{			
+	switch(n)
+	{
+		case 0:
+			moveObj(JS1, 61);
+			break;
+		case 1:
+			moveObj(JS2, 121);
+			break;
+		case 2:
+			moveObj(JS3, 181);
+			break;
+		case 3:
+		default:
+			alert("Animation completed");
+			break;
+	}
+}
+Hmove=-100;
+i=0;
+function moveObj(obj, H) 
+{    
+   	obj.style.left=Hmove;
+   	Hmove+=4;
+   	if(Hmove<H)
+      	window.setTimeout("moveObj(" +obj.id+ "," +H+ ");", 0);
+	if(H < Hmove)
+	{
+		Hmove=-100;
+		i++;
+		sequencer(i);
+	}
+}
+</script>
+
+<body>
+
+<img id=JS1 style="z-index: 0; left: -100px; position: absolute; top: 60px" 
+	height="72" width="100" align="baseline" border="0" hspace="0" src="JavaScript.gif"> 
+
+<img id=JS2 style="z-index: 0; left: -100px; position: absolute; top: 120px" 
+	height="72" width="100" align="baseline" border="0" hspace="0" src="JavaScript.gif"> 
+
+<img id=JS3 style="z-index: 0; left: -100px; position: absolute; top: 180px" 
+	height="72" width="100" align="baseline" border="0" hspace="0" src="JavaScript.gif"> 
+
+<script language="JavaScript">
+	sequencer(0);
+</script>
+
+</body>
+</html>

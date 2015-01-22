@@ -1,0 +1,202 @@
+<!doctype html>
+<html>
+<head>
+
+<script>
+
+function myfunction() {
+var thecolor = document.getElementById('thecolor').value;
+document.getElementById('paragraph').style.color = thecolor;
+
+}
+
+
+</script>
+
+</head>
+
+<body>
+
+What's your favorite color?
+
+<input type ="text" id="thecolor">
+<input type ="button" value="click me" onclick="myfunction()">
+
+<p id="paragraph">bla bla bla bla bla bla</p>
+
+</body>
+</html>
+
+
+=============================
+
+<!doctype html>
+<html>
+<head>
+
+<script>
+
+function myfunction() {
+
+var thesize = document.getElementById('thesize').value;
+
+var paragraph = document.getElementById('paragraph').style;
+
+paragraph.fontSize = thesize + "px"
+
+//paragraph.fontWeight = "bold"
+
+}
+
+
+</script>
+
+</head>
+
+<body>
+
+Bad vision? How big do you want the text? (in px) <br>
+
+<!--What's your favorite color?-->
+
+<input type ="text" id="thesize">px
+
+<input type ="button" value="click me" onclick="myfunction()">
+
+<p id="paragraph">bla bla bla bla bla bla</p>
+
+</body>
+</html>
+
+=========================
+
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+Bad vision? How big do you want the text? (in px)<br>
+
+<input type = "text" id="thecolor">px
+<input type ="button" value="click me" onclick="myfunction()">
+
+<p id="paragraph"> bla bla bla bla bla</p>
+
+
+<script>
+
+/* 
+
+	var thesize = document.getElementById('thecolor').value
+	var paragraph = document.getElementById('paragraph').style;
+	paragraph.fontSize = "normal"
+
+*/
+
+function myfunction() {
+	
+	var a = document.getElementsByTagName('body')[0]
+	var tag = document.getElementsByTagName('input')[0].value;
+	a.style.fontSize = tag + "px"
+
+
+//	alert(id + ", " + tag)
+
+}
+
+</script>
+
+</body>
+</html>
+
+
+==================
+
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+Bad vision? How big do you want the text? (in px)<br>
+
+<input type ="button" value="increase size" onclick="bigger()">
+<input type ="button" value="decrease size" onclick="smaller()">
+
+
+<p id="paragraph"> bla bla bla bla bla</p>
+
+
+<script>
+
+function bigger() {
+
+document.getElementsByTagName('body')[0].style.fontSize = 1.3 + "em";
+document.getElementsByTagName('input')[0].style.display= "none";
+document.getElementsByTagName('input')[1].style.display = "block";
+
+}
+
+function smaller() {
+
+document.getElementsByTagName('body')[0].style.fontSize = 1 + "em";
+document.getElementsByTagName('input')[0].style.display= "block";
+document.getElementsByTagName('input')[1].style.display = "none";
+
+}
+
+</script>
+
+<style>
+
+body input:last-of-type{display:none;}
+
+</style>
+
+</body>
+</html>
+
+
+==============================
+
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+Bad vision? How big do you want the text? (in px)<br>
+
+<input type ="button" value="increase size" onclick="bigger()">
+<input type ="button" value="decrease size" onclick="smaller()">
+
+
+<p id="paragraph"> bla bla bla bla bla</p>
+
+
+<script>
+
+function bigger() {
+
+document.getElementsByTagName('body')[0].style.fontSize = 1.3 + "em";
+document.getElementsByTagName('input')[0].style.display= "none";
+document.getElementsByTagName('input')[1].style.display = "block";
+
+}
+
+function smaller() {
+
+document.getElementsByTagName('body')[0].style.fontSize = 1 + "em";
+document.getElementsByTagName('input')[0].style.display= "block";
+document.getElementsByTagName('input')[1].style.display = "none";
+
+}
+
+</script>
+
+<style>
+
+body input:last-of-type{display:none;}
+
+</style>
+
+</body>
+</html>
